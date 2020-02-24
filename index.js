@@ -18,6 +18,7 @@ function addNumbers(num1, num2) {
 
 // ⭐️ Example Challenge end ⭐️
 
+// console.log("hello"); just checking
 
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -39,10 +40,18 @@ function addNumbers(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(idArgument, nameArgument, emailArgument) {
+  const personObject = {
+    id: idArgument,
+    name: nameArgument,
+    email: emailArgument
+  };
+  return personObject;
 }
-
+// Test:
+// console.log(makePersonObject);
+// const me = makePersonObject(34, 'Ben', 'ben@little-haus.com');
+// console.log(me);
 /**
  * ### Challenge `getName`
  * 
@@ -56,9 +65,12 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(input) {
+  
+  return ('Hello, my name is ' + input.name);
 }
+//Test:
+// console.log(getName(me)); 
 
 /**
  * ### Challenge `makeSmartPerson`
@@ -73,11 +85,18 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson(nameArg) {
+  const smartPerson = {
+    name: nameArg,
+    sum: function(num1, num2) {
+      return num1 + num2;
+    },
+    speak: function() {
+      return ('Hello, my name is ' + nameArg);
+    }
+  }
+  return smartPerson;
 }
-
-
 
 
 
