@@ -285,7 +285,7 @@ function getOlderCars(inventory, maxYear) {
 function getGermanCars(inventory) {
   let zeGermans = []
   for (let i = 0; i < inventory.length; i++) {
-    if (inventory[i].car_make === 'Audi' || inventory[i].car_make === 'Mercedes-Benz' || inventory[i].car_make === 'Volkswagen' || inventory[i].car_make ==='BMW') {
+    if (inventory[i].car_make === 'Audi' || inventory[i].car_make === 'Mercedes-Benz' || inventory[i].car_make === 'Volkswagen' || inventory[i].car_make === 'BMW') {
       zeGermans.push(inventory[i])
     }
   }
@@ -327,8 +327,15 @@ const argTimesTwo = (num) => num * 2; // code here!
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker(mileage) {
+  let carMileage = {
+    odometer: mileage,
+    drive: function (distance) {
+      this.odometer += distance; //not sure why 'this.odometer = mileage + distance;' didsn't work here
+      return this.odometer;
+    }
+  }
+  return carMileage;
 }
 
 /// ////// END OF CHALLENGE /////////
